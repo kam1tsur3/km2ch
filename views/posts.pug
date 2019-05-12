@@ -1,0 +1,18 @@
+doctype html
+htll(lang="ja")
+	head
+		meta(charset="UTF-8")
+		title secret-board
+	body
+		h1 Secret Board
+		a(href="/logout") Logout
+		h2 New Post
+		form(method="post" action="/posts")
+			div
+				textarea(name="content" cols=40 rows=4)
+			div
+				button(type="submit") Post
+		h2 All posts
+		each content in contents
+			p #{content}
+			hr
