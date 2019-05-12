@@ -13,6 +13,7 @@ htll(lang="ja")
 			div
 				button(type="submit") Post
 		h2 All posts
-		each content in contents
-			p #{content}
+		each post in posts
+			p #{post.content}
+			p Date: #{post.createdAt}
 			hr
