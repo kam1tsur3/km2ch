@@ -14,6 +14,12 @@ htll(lang="ja")
 				button(type="submit") Post
 		h2 All posts
 		each post in posts
+			h3 #{post.id} : ID:#{post.trackingCookie}
 			p #{post.content}
 			p Date: #{post.createdAt}
+			- var isDeletable = (user === post.postedBy)
+			if isDeletable
+				form(method="post" action="/posts?delete=1")
+					input(type="hidden" name="id" value=post.id)
+					button(type="submit") Delete
 			hr
