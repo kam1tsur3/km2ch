@@ -28,9 +28,9 @@ htll(lang="ja")
 					else
 						span #{post.id} : ID:#{post.trackingCookie}
 				div.card-body
-					p.card-text!=post.content	
+					p.card-text(style="white-space:pre; overflow:auto;") #{post.content}
 				div.card-footer
-					div Date: #{post.createdAt}
+					div Date: #{post.formattedCreatedAt}
 					- var isAdmin = (user === 'admin')
 					if isAdmin
 						div Posted by: #{post.postedBy}
@@ -39,7 +39,8 @@ htll(lang="ja")
 						form(method="post" action="/posts?delete=1")
 							input(type="hidden" name="id" value=post.id)
 							button(type="submit").btn.btn-danger.float-right Delete
-		
+					hr
+
 		script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js")
 		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js",
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl",
