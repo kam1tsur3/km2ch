@@ -1,0 +1,8 @@
+{
+	"name": "secret-board",
+	"description": "km2ch",
+	"repository": "https://github.com/kam1tsur3/km2ch",
+	"logo": "",
+	"keywords": ["node"],
+	"image": "heroku/nodejs"
+}
